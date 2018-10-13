@@ -6,6 +6,7 @@ import pug from 'gulp-pug';
 import webserver from 'browser-sync';
 import del from 'del';
 
+const server = webserver.create();
 const build = 'build/';
 const source = 'src/';
 const paths = {
@@ -37,7 +38,7 @@ gulp.task('styles', function() {
     .pipe(autoprefixer())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.styles.dest))
-    .pipe(webserver.stream());
+    .pipe(server.stream());
 });
 
 /*
@@ -65,13 +66,12 @@ gulp.task('copy', function() {
 */
 
 function reloadServer(done) {
-  webserver.reload();
+  server.reload();
   done();
 }
 
 function startServer(done) {
-  webserver.create();
-  webserver.init({
+  server.init({
     server: {
       baseDir: './build/'
     }
