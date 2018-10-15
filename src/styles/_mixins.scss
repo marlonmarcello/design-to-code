@@ -1,0 +1,40 @@
+// Usage
+// http://codepen.io/macx/full/qmkje
+//
+// .dark-on-light {
+//   @include font-smoothing(off);
+// }
+//
+// .light-on-dark {
+//   @include font-smoothing(on);
+// }
+@mixin font-smoothing($value: on) {
+  @if $value == on {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
+
+@mixin font-main() {
+  font-family: $font-main;
+  line-height: 1.25;
+}
+
+@mixin font-accent() {
+  font-family: $font-accent;
+  line-height: 1.15;
+}
+
+@mixin font-heading() {
+  @include font-main();
+
+  font-weight: 900;
+}
+
+@function get-color($name) {
+  @return map-get($colors, $name);
+}

@@ -1,4 +1,99 @@
+// Helpers
+@import '_settings';
+@import '_mixins';
+
 // All the base styles
+html {
+  @include font-smoothing(on);
+
+  font-size: 12px;
+}
+
+body {
+  @include font-main();
+
+  background-color: lightgray;
+  color: get-color('black');
+}
+
+p {
+  font-size: 1.15rem;
+  margin-bottom: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: get-color('pink');
+
+  &:hover {
+    color: get-color('green');
+    text-decoration: underline;
+  }
+}
+
+strong {
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
+}
+
+h1,
+h2,
+h3 {
+  @include font-heading();
+
+  margin-bottom: 0.2em;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4,
+h5 {
+  @include font-accent();
+
+  margin-bottom: 0.25em;
+}
+
+h4 {
+  font-size: 1.75rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+@media #{$medium-up} {
+  html {
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+@media #{$large-up} {
+  html {
+    font-size: 18px;
+  }
+}
 
 // All the imports
 @import 'components/all';
