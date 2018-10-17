@@ -1,4 +1,16 @@
 extends ../master
 
+include ../components/product
+
 block main
-  p This is the index
+  +product(
+    {
+      title: 'Super Smash Bros. Ultimate Special Edition',
+      description: 'With the Super Smash Bros. Ultimate Special Edition, you will receive a Super Smash Bros. Ultimate game in a steel case, and a Super Smash Bros. Ultimate Edition Nintendo Switch™ Pro Controller to take down your friends in style!',
+      imageUrl: 'https://happyholidays.nintendo.com/binaries/5baac1a4efd73a3c46b46a39/productImage.png',
+      price: {
+        val: 139,
+        dec: 99
+      }
+    }
+  )

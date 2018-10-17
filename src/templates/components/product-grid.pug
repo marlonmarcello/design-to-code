@@ -1,0 +1,7 @@
+include product
+
+mixin product-grid(items)
+  for item in items
+    ul.product-grid
+      li.product-grid__item
+        +product(item[0], item[1])
