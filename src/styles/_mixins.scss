@@ -38,3 +38,7 @@
 @function get-color($name) {
   @return map-get($colors, $name);
 }
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}

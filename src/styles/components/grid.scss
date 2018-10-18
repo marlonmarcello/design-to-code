@@ -1,0 +1,36 @@
+.grid {
+  padding: $spacer/2;  
+}
+
+.grid__item {
+  padding: $spacer/2;
+}
+
+@media #{$medium-up} {
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  $column: 100% / 3;
+
+  .grid__item {
+    flex: 0 0 $column;
+  }
+
+  .grid__item--wide {
+    flex-basis: 100% - $column;
+  }
+}
+
+@media #{$large-up} {
+  $column: 100% / 4;
+
+  .grid__item {
+    flex-basis: $column;
+  }
+
+  .grid__item--wide {
+    flex-basis: 100% - $column*2;
+  }
+}

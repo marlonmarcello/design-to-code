@@ -1,5 +1,11 @@
 include button
 
+mixin product-grid(items)
+  for item in items
+    ul.grid&attributes(attributes)
+      li.grid__item
+        +product(item[0], item[1])
+
 mixin product(product, modifier)
   .product(class=(modifier ? 'product--' + modifier : ''))&attributes(attributes)
     .product__image

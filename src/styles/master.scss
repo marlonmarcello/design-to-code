@@ -96,6 +96,13 @@ h6 {
   font-size: 1rem;
 }
 
+// helper classes
+.container {
+  margin: 0 auto;
+  width: calc(100% - #{$spacer * 2});
+  max-width: $container;
+}
+
 @media #{$medium-up} {
   html {
     font-size: 16px;
