@@ -1,9 +1,10 @@
 include button
 
 mixin product-grid(items)
-  for item in items
-    ul.grid&attributes(attributes)
-      li.grid__item
+  ul.grid&attributes(attributes)
+    for item in items
+      - var modifier = item[1]
+      li.grid__item(class=(modifier ? 'grid__item--'+modifier : ''))
         +product(item[0], item[1])
 
 mixin product(product, modifier)
