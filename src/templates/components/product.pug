@@ -5,7 +5,7 @@ mixin product-grid(items)
     for item in items
       - var modifier = item[1]
       li.grid__item(class=(modifier ? 'grid__item--'+modifier : ''))
-        +product(item[0], item[1])
+        +product(item[0], modifier)
 
 mixin product(product, modifier)
   .product(class=(modifier ? 'product--' + modifier : ''))&attributes(attributes)
